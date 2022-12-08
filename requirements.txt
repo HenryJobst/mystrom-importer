@@ -1,0 +1,4 @@
+python-dotenv==0.21.0
+imap-tools==1.0.0
+SQLAlchemy==1.4.44
+PyMySQL==1.0.2
