@@ -18,10 +18,11 @@ class MystromResult(Base):
     relay = Column(Integer)
     temperature = Column(Float)
     date = Column(DateTime(timezone=True), default=datetime.now)
+    source = Column(Integer, default=1)
 
     # Lets us print out a user object conveniently.
     def __repr__(self):
         return "<Result(deivce_id='%s', power='%s', ws='%s', relay='%s', " \
-               "temperature='%s', date='%s')>" % (
+               "temperature='%s', date='%s', source='%s')>" % (
             self.device_id, self.power, self.ws, self.relay, self.temperature,
-            self.date)
+            self.date, self.source)

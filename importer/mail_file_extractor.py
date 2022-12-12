@@ -82,9 +82,10 @@ class MailFileExtractor:
         res.power = row['power (Watt)']
         res.ws = row['energy (Ws)']
         res.temperature = row['temperature']
+        res.source = 2
         result = self.session.scalars(select(
             MystromResult).where(
-            MystromResult.date == res.date))
+            MystromResult.date == res.date and MystromResult.source == res.source))
         if not result.first():
             self.session.add(res)
 
